@@ -43,7 +43,7 @@ if ( isset($data['do_signUp']) )
 		$user->Password = password_hash($data['Password'], PASSWORD_DEFAULT);
 		R::store($user);
 		echo '<div style = "color: green;">Registration Is Done!!!
-		<br/><a href = "/PHP/template-login/signIn.php">Sign in</a></div><hr>';
+		<br/><a href = "../template-login/signIn.php">Sign in</a></div><hr>';
 	}
 	else
 	{
@@ -89,7 +89,7 @@ if ( isset($data['do_signUp']) )
                     <h2 class="title">Registration</h2>
                 </div>
                 <div class="card-body">
-                    <form action="/PHP/template-register/signUp.php" method="POST" >
+                    <form action="../template-register/signUp.php" method="POST" >
                         <div class="form-row">
                             <div class="name">Login</div>
                             <div class="value">

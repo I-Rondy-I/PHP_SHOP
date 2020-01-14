@@ -3,7 +3,7 @@
 
 unset($_SESSION['logged_user']);
 
-header('Location: /PHP/index-last.php');
+header('Location: ../');
 
 ?>
 

@@ -7,10 +7,10 @@
 	<br>
 	Hello, <?php echo $_SESSION['logged_user'] -> login; ?>!
 	<hr>
-	<a href = "/PHP/logOut.php">Log Out</a>
+	<a href = "logOut.php">Log Out</a>
 <?php else : ?>
 	Not Autorizated:(
 	<br>
-	<a href = "/PHP/signIn.php">Sign In</a><br>
-	<a href = "/PHP/signUp.php">Sign Up</a>
+	<a href = "template-login/signIn.php">Sign In</a><br>
+	<a href = "template-register/signUp.php">Sign Up</a>
 <?php endif; ?>

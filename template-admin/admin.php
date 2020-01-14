@@ -89,7 +89,7 @@ if ( isset($data['do_add']) )
                     <h2 class="title">Dodanie towaru</h2>
                 </div>
                 <div class="card-body">
-                    <form method="POST">
+                    <form action="../template-admin/admin.php" method="POST">
                         <div class="form-row">
                             <div class="name">Tytul</div>
                             <div class="value">

@@ -19,7 +19,7 @@ if ( isset($data['do_signIn']) )
 			//Login is On - loged in progress..
 			$_SESSION['logged_user'] = $user;
 			echo '<div style = "color: green;">Autorization Is Done!!!<br/>
-			<a href = "../index-last.php">Main</a> page;)</div><hr>';
+			<a href = "../">Main</a> page;)</div><hr>';
 		}
 		else
 		{
@@ -73,7 +73,7 @@ if ( isset($data['do_signIn']) )
 	<div class="limiter">
 		<div class="container-login100" style="background-image: url('images/bg-01.jpg');">
 			<div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-54">
-				<form class="login100-form validate-form" action="/PHP/template-login/signIn.php" method="POST">
+				<form class="login100-form validate-form" action="../template-login/signIn.php" method="POST">
 					<span class="login100-form-title p-b-49">
 						Login
 					</span>
