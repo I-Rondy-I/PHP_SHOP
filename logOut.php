@@ -3,7 +3,7 @@
 
 unset($_SESSION['logged_user']);
 
-header('Location: ../');
+header('Location: ../PHP_SHOP');
 
 ?>
 

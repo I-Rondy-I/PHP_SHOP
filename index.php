@@ -7,6 +7,8 @@
 	<br>
 	Hello, <?php echo $_SESSION['logged_user'] -> login; ?>!
 	<hr>
+	<a href = "template-shop/shop.php">Shop</a>
+	<hr>
 	<a href = "logOut.php">Log Out</a>
 <?php else : ?>
 	Not Autorizated:(
