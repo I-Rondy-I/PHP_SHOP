@@ -14,7 +14,7 @@ if ( isset($data['do_signIn']) )
 	if ( $user )
 	{
 		// Login is On
-		if ( password_verify($data['Password'], $user->Password))
+		if ( password_verify($data['Password'], $user->password) )
 		{
 			//Login is On - loged in progress..
 			$_SESSION['logged_user'] = $user;
@@ -45,6 +45,18 @@ if ( isset($data['do_signIn']) )
 	<title>Logowanie</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+		<!-- Icons font header-->
+		<link rel="shortcut icon" href="../img/icon.jpg" />
+		<!-- latest compiled and minified CSS -->
+        <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css" type="text/css">
+        <!-- jquery library -->
+        <script type="text/javascript" src="../bootstrap/js/jquery-3.2.1.min.js"></script>
+        <!-- Latest compiled and minified javascript -->
+        <script type="text/javascript" src="../bootstrap/js/bootstrap.min.js"></script>
+        <!-- External CSS -->
+        <link rel="stylesheet" href="../css/style.css" type="text/css">
+	
 <!--===============================================================================================-->	
 	<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
 <!--===============================================================================================-->
@@ -69,7 +81,9 @@ if ( isset($data['do_signIn']) )
 <!--===============================================================================================-->
 </head>
 <body>
-	
+	<?php
+            require '../header-template.php';
+    ?>
 	<div class="limiter">
 		<div class="container-login100" style="background-image: url('images/bg-01.jpg');">
 			<div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-54">
@@ -111,6 +125,13 @@ if ( isset($data['do_signIn']) )
 				</form>
 			</div>
 		</div>
+		<footer class="footer1"> 
+               <div class="container">
+				   <center>
+					   <p1>Tu może być - Reklama;)</p1>
+				   </center>
+               </div>
+		</footer>
 	</div>
 	
 

@@ -1,0 +1,158 @@
+.header
+  h1 Your cart
+  p "I say let the world go to hell, but I should always have my tea."
+  p ― Fyodor Dostoyevsky, Notes from Underground
+
+.cart-container
+  .empty style="display:none" No more twinkies ! 
+  ul.cart
+
+    li.product data-price=4.90 data-quantity=2
+      .product-preview
+        .thumbnail
+          img.image src = "https://s.cdpn.io/24822/sidebar-cupcake.png"
+        .product-paper
+          .product-name Cupcake
+          .product-price $ 4.90
+      .product-quantity x2
+      .product-interactions
+        .button.plus +
+        .button.minus -
+        .button.del
+
+    li.product data-price=3.50 data-quantity=1
+      .product-preview
+        .thumbnail
+          img.image src = "https://s.cdpn.io/24822/ponytails-coffee-time-coffee-cup3.png"
+        .product-paper
+          .product-name Coffee
+          .product-price $ 3.50
+      .product-quantity x1
+      .product-interactions
+        .button.plus +
+        .button.minus -
+        .button.del
+
+    li.product data-price=5.70 data-quantity=3
+      .product-preview
+        .thumbnail
+          img.image src = "https://s.cdpn.io/24822/Chocolate.png"
+        .product-paper
+          .product-name Chocolate
+          .product-price $ 5.70
+      .product-quantity x3
+      .product-interactions
+        .button.plus +
+        .button.minus -
+        .button.del
+
+    li.product data-price=6.90 data-quantity=1
+      .product-preview
+        .thumbnail
+          img.image src = "https://s.cdpn.io/24822/waffle-homestyle.png"
+        .product-paper
+          .product-name Waffle
+          .product-price $ 6.90
+      .product-quantity x1
+      .product-interactions
+        .button.plus +
+        .button.minus -
+        .button.del
+
+    li.product data-price=3.90 data-quantity=2
+      .product-preview
+        .thumbnail
+          img.image src = "https://s.cdpn.io/24822/donuts.jpg"
+        .product-paper
+          .product-name Donuts
+          .product-price $ 3.90
+      .product-quantity x2
+      .product-interactions
+        .button.plus +
+        .button.minus -
+        .button.del
+
+    li.product data-price=6.50 data-quantity=1
+      .product-preview
+        .thumbnail
+          img.image src = "https://s.cdpn.io/24822/raspberry-sorbet.gif"
+        .product-paper
+          .product-name Sorbet
+          .product-price $ 6.50
+      .product-quantity x1
+      .product-interactions
+        .button.plus +
+        .button.minus -
+        .button.del
+
+    li.product data-price=1.80 data-quantity=3
+      .product-preview
+        .thumbnail
+          img.image src = "https://s.cdpn.io/24822/croissant-psd49504.png"
+        .product-paper
+          .product-name French Croissant
+          .product-price $ 1.80
+      .product-quantity x3
+      .product-interactions
+        .button.plus +
+        .button.minus -
+        .button.del
+
+    li.product data-price=2.50 data-quantity=1
+      .product-preview
+        .thumbnail
+          img.image src = "https://s.cdpn.io/24822/Macaron.png"
+        .product-paper
+          .product-name Macaron
+          .product-price $ 2.50
+      .product-quantity x1
+      .product-interactions
+        .button.plus +
+        .button.minus -
+        .button.del
+
+    li.product data-price=2.50 data-quantity=1
+      .product-preview
+        .thumbnail
+          img.image src = "https://s.cdpn.io/24822/millefeuille-vanille.jpg"
+        .product-paper
+          .product-name Mille-feuille
+          .product-price $ 12.90
+      .product-quantity x1
+      .product-interactions
+        .button.plus +
+        .button.minus -
+        .button.del
+
+    li.product data-price=9.90 data-quantity=1
+      .product-preview
+        .thumbnail
+          img.image src = "https://s.cdpn.io/24822/tarte-au-citron.jpg"
+        .product-paper
+          .product-name Lemon Pie
+          .product-price $ 9.90
+      .product-quantity x1
+      .product-interactions
+        .button.plus +
+        .button.minus -
+        .button.del
+
+table.bill
+  tr.subtotal
+    td.label Subtotal :
+    td.value $ 71.90
+  tr.salestax
+    td.label Sales tax : 
+    td.value $ 3.60
+  tr
+    td.label Shipping :
+    td.value $ 5.00
+  tr.total
+    td.label Total :
+    td.value $ 80.50
+
+.actions
+  .big-button.go Get them !
+.actions
+  .big-button.return Return to shop
+  

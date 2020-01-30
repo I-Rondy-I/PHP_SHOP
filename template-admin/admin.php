@@ -35,6 +35,9 @@ if ( isset($data['do_add']) )
 			$user = R::dispense('gra');
 			$user->tytul = $data['Tytul'];
 			$user->image = "product-images/" . $data['Image'];
+			
+			$user->img = $data['Image'];
+			
 			$user->id_producent = $data['Producent'];
 			$user->id_platforma = $data['Platforma'];
 			$user->id_gatunek = $data['Gatunek'];
@@ -63,10 +66,20 @@ if ( isset($data['do_add']) )
     <meta name="description" content="Colorlib Templates">
     <meta name="author" content="Colorlib">
     <meta name="keywords" content="Colorlib Templates">
-
+	
+		<!-- Icons font header-->
+		<link rel="shortcut icon" href="../img/icon.jpg" />
+		<!-- latest compiled and minified CSS -->
+        <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css" type="text/css">
+        <!-- jquery library -->
+        <script type="text/javascript" src="../bootstrap/js/jquery-3.2.1.min.js"></script>
+        <!-- Latest compiled and minified javascript -->
+        <script type="text/javascript" src="../bootstrap/js/bootstrap.min.js"></script>
+        <!-- External CSS -->
+        <link rel="stylesheet" href="../css/style.css" type="text/css">
+	
     <!-- Title Page-->
     <title>Dodanie towaru</title>
-
     <!-- Icons font CSS-->
     <link href="vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
     <link href="vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
@@ -82,6 +95,9 @@ if ( isset($data['do_add']) )
 </head>
 
 <body>
+	<?php
+        require '../header-template.php';
+    ?>
     <div class="page-wrapper bg-gra-03 p-t-45 p-b-50">
         <div class="wrapper wrapper--w790">
             <div class="card card-5">
@@ -188,6 +204,13 @@ if ( isset($data['do_add']) )
                 </div>
             </div>
         </div>
+		<footer class="footer"> 
+               <div class="container">
+               <center>
+                   <p>Tu może być - Reklama;)</p>
+               </center>
+               </div>
+        </footer>
     </div>
 
     <!-- Jquery JS-->

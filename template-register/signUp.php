@@ -39,8 +39,8 @@ if ( isset($data['do_signUp']) )
 
 		$user = R::dispense('users');
 		$user->login = $data['login'];
-		$user->Email = $data['E-mail'];
-		$user->Password = password_hash($data['Password'], PASSWORD_DEFAULT);
+		$user->email = $data['E-mail'];
+		$user->password = password_hash($data['Password'], PASSWORD_DEFAULT);
 		R::store($user);
 		echo '<div style = "color: green;">Registration Is Done!!!
 		<br/><a href = "../template-login/signIn.php">Sign in</a></div><hr>';
@@ -58,6 +58,7 @@ if ( isset($data['do_signUp']) )
 
 <head>
     <!-- Required meta tags-->
+	
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="Colorlib Templates">
@@ -66,7 +67,18 @@ if ( isset($data['do_signUp']) )
 
     <!-- Title Page-->
     <title>Rejestracja</title>
-
+	
+		<!-- Icons font header-->
+		<link rel="shortcut icon" href="../img/icon.jpg" />
+		<!-- latest compiled and minified CSS -->
+        <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css" type="text/css">
+        <!-- jquery library -->
+        <script type="text/javascript" src="../bootstrap/js/jquery-3.2.1.min.js"></script>
+        <!-- Latest compiled and minified javascript -->
+        <script type="text/javascript" src="../bootstrap/js/bootstrap.min.js"></script>
+        <!-- External CSS -->
+        <link rel="stylesheet" href="../css/style.css" type="text/css">
+	
     <!-- Icons font CSS-->
     <link href="vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
     <link href="vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
@@ -82,6 +94,9 @@ if ( isset($data['do_signUp']) )
 </head>
 
 <body>
+	<?php
+        require '../header-template.php';
+    ?>
     <div class="page-wrapper bg-gra-03 p-t-45 p-b-50">
         <div class="wrapper wrapper--w790">
             <div class="card card-5">
@@ -129,6 +144,13 @@ if ( isset($data['do_signUp']) )
                 </div>
             </div>
         </div>
+		<footer class="footer"> 
+               <div class="container">
+				   <center>
+					   <p>Tu może być - Reklama;)</p>
+				   </center>
+               </div>
+        </footer>
     </div>
 
     <!-- Jquery JS-->

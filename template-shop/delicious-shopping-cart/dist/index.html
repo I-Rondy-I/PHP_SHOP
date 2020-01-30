@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - Delicious Shopping Cart</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+<link rel='stylesheet' href='https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css'><link rel="stylesheet" href="./style.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div class="header">
+  <h1>
+    Your cart
+  </h1>
+  <p>
+    "I say let the world go to hell, but I should always have my tea."
+  </p>
+  <p>
+    ― Fyodor Dostoyevsky, Notes from Underground
+  </p>
+</div>
+<div class="cart-container">
+  <div class="empty" style="display:none">
+    No more twinkies ! 
+  </div>
+  <ul class="cart">
+    <li class="product" data-price="4.9" data-quantity="2">
+      <div class="product-preview">
+        <div class="thumbnail">
+          <img class="image" src="https://s.cdpn.io/24822/sidebar-cupcake.png" />
+        </div>
+        <div class="product-paper">
+          <div class="product-name">
+            Cupcake
+          </div>
+          <div class="product-price">
+            $ 4.90
+          </div>
+        </div>
+      </div>
+      <div class="product-quantity">
+        x2
+      </div>
+      <div class="product-interactions">
+        <div class="button plus">
+          +
+        </div>
+        <div class="button minus">
+          -
+        </div>
+        <div class="button del"></div>
+      </div>
+    </li>
+    <li class="product" data-price="3.5" data-quantity="1">
+      <div class="product-preview">
+        <div class="thumbnail">
+          <img class="image" src="https://s.cdpn.io/24822/ponytails-coffee-time-coffee-cup3.png" />
+        </div>
+        <div class="product-paper">
+          <div class="product-name">
+            Coffee
+          </div>
+          <div class="product-price">
+            $ 3.50
+          </div>
+        </div>
+      </div>
+      <div class="product-quantity">
+        x1
+      </div>
+      <div class="product-interactions">
+        <div class="button plus">
+          +
+        </div>
+        <div class="button minus">
+          -
+        </div>
+        <div class="button del"></div>
+      </div>
+    </li>
+    <li class="product" data-price="5.7" data-quantity="3">
+      <div class="product-preview">
+        <div class="thumbnail">
+          <img class="image" src="https://s.cdpn.io/24822/Chocolate.png" />
+        </div>
+        <div class="product-paper">
+          <div class="product-name">
+            Chocolate
+          </div>
+          <div class="product-price">
+            $ 5.70
+          </div>
+        </div>
+      </div>
+      <div class="product-quantity">
+        x3
+      </div>
+      <div class="product-interactions">
+        <div class="button plus">
+          +
+        </div>
+        <div class="button minus">
+          -
+        </div>
+        <div class="button del"></div>
+      </div>
+    </li>
+    <li class="product" data-price="6.9" data-quantity="1">
+      <div class="product-preview">
+        <div class="thumbnail">
+          <img class="image" src="https://s.cdpn.io/24822/waffle-homestyle.png" />
+        </div>
+        <div class="product-paper">
+          <div class="product-name">
+            Waffle
+          </div>
+          <div class="product-price">
+            $ 6.90
+          </div>
+        </div>
+      </div>
+      <div class="product-quantity">
+        x1
+      </div>
+      <div class="product-interactions">
+        <div class="button plus">
+          +
+        </div>
+        <div class="button minus">
+          -
+        </div>
+        <div class="button del"></div>
+      </div>
+    </li>
+    <li class="product" data-price="3.9" data-quantity="2">
+      <div class="product-preview">
+        <div class="thumbnail">
+          <img class="image" src="https://s.cdpn.io/24822/donuts.jpg" />
+        </div>
+        <div class="product-paper">
+          <div class="product-name">
+            Donuts
+          </div>
+          <div class="product-price">
+            $ 3.90
+          </div>
+        </div>
+      </div>
+      <div class="product-quantity">
+        x2
+      </div>
+      <div class="product-interactions">
+        <div class="button plus">
+          +
+        </div>
+        <div class="button minus">
+          -
+        </div>
+        <div class="button del"></div>
+      </div>
+    </li>
+    <li class="product" data-price="6.5" data-quantity="1">
+      <div class="product-preview">
+        <div class="thumbnail">
+          <img class="image" src="https://s.cdpn.io/24822/raspberry-sorbet.gif" />
+        </div>
+        <div class="product-paper">
+          <div class="product-name">
+            Sorbet
+          </div>
+          <div class="product-price">
+            $ 6.50
+          </div>
+        </div>
+      </div>
+      <div class="product-quantity">
+        x1
+      </div>
+      <div class="product-interactions">
+        <div class="button plus">
+          +
+        </div>
+        <div class="button minus">
+          -
+        </div>
+        <div class="button del"></div>
+      </div>
+    </li>
+    <li class="product" data-price="1.8" data-quantity="3">
+      <div class="product-preview">
+        <div class="thumbnail">
+          <img class="image" src="https://s.cdpn.io/24822/croissant-psd49504.png" />
+        </div>
+        <div class="product-paper">
+          <div class="product-name">
+            French Croissant
+          </div>
+          <div class="product-price">
+            $ 1.80
+          </div>
+        </div>
+      </div>
+      <div class="product-quantity">
+        x3
+      </div>
+      <div class="product-interactions">
+        <div class="button plus">
+          +
+        </div>
+        <div class="button minus">
+          -
+        </div>
+        <div class="button del"></div>
+      </div>
+    </li>
+    <li class="product" data-price="2.5" data-quantity="1">
+      <div class="product-preview">
+        <div class="thumbnail">
+          <img class="image" src="https://s.cdpn.io/24822/Macaron.png" />
+        </div>
+        <div class="product-paper">
+          <div class="product-name">
+            Macaron
+          </div>
+          <div class="product-price">
+            $ 2.50
+          </div>
+        </div>
+      </div>
+      <div class="product-quantity">
+        x1
+      </div>
+      <div class="product-interactions">
+        <div class="button plus">
+          +
+        </div>
+        <div class="button minus">
+          -
+        </div>
+        <div class="button del"></div>
+      </div>
+    </li>
+    <li class="product" data-price="2.5" data-quantity="1">
+      <div class="product-preview">
+        <div class="thumbnail">
+          <img class="image" src="https://s.cdpn.io/24822/millefeuille-vanille.jpg" />
+        </div>
+        <div class="product-paper">
+          <div class="product-name">
+            Mille-feuille
+          </div>
+          <div class="product-price">
+            $ 12.90
+          </div>
+        </div>
+      </div>
+      <div class="product-quantity">
+        x1
+      </div>
+      <div class="product-interactions">
+        <div class="button plus">
+          +
+        </div>
+        <div class="button minus">
+          -
+        </div>
+        <div class="button del"></div>
+      </div>
+    </li>
+    <li class="product" data-price="9.9" data-quantity="1">
+      <div class="product-preview">
+        <div class="thumbnail">
+          <img class="image" src="https://s.cdpn.io/24822/tarte-au-citron.jpg" />
+        </div>
+        <div class="product-paper">
+          <div class="product-name">
+            Lemon Pie
+          </div>
+          <div class="product-price">
+            $ 9.90
+          </div>
+        </div>
+      </div>
+      <div class="product-quantity">
+        x1
+      </div>
+      <div class="product-interactions">
+        <div class="button plus">
+          +
+        </div>
+        <div class="button minus">
+          -
+        </div>
+        <div class="button del"></div>
+      </div>
+    </li>
+  </ul>
+</div>
+<table class="bill">
+  <tr class="subtotal">
+    <td class="label">
+      Subtotal :
+    </td>
+    <td class="value">
+      $ 71.90
+    </td>
+  </tr>
+  <tr class="salestax">
+    <td class="label">
+      Sales tax : 
+    </td>
+    <td class="value">
+      $ 3.60
+    </td>
+  </tr>
+  <tr>
+    <td class="label">
+      Shipping :
+    </td>
+    <td class="value">
+      $ 5.00
+    </td>
+  </tr>
+  <tr class="total">
+    <td class="label">
+      Total :
+    </td>
+    <td class="value">
+      $ 80.50
+    </td>
+  </tr>
+</table>
+<div class="actions">
+  <div class="big-button go">
+    Get them !
+  </div>
+</div>
+<div class="actions">
+  <div class="big-button return">
+    Return to shop
+  </div>
+</div>
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<script src='https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js'></script><script  src="./script.js"></script>
+
+</body>
+</html>
