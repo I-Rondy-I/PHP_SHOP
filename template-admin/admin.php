@@ -6,11 +6,12 @@ $Producers = R::findAll( 'Producent' );
 $Gatunek = R::findAll( 'Gatunek' );
 $Platforma = R::findAll( 'Platforma' );
 
+echo '<script>console.log('.json_encode($data,JSON_HEX_TAG).');</script>';
 if ( isset($data['do_add']) )
 {
 	//Adding products in here
     $errors = array();
-	$user = R::findOne('gra', 'tytul = ?', array($data['Tytul']));
+	
     
 	if ( trim($data['Tytul']) == "" )
 	{
@@ -20,32 +21,44 @@ if ( isset($data['do_add']) )
 	if ( empty($errors) )
 	{
 		//all good - adding in progress..
-		if ( ($data['Tytul'] == $user->tytul) && ($data['Platforma'] == $user->id_platforma) )
+		$user = R::findOne('gra', 'tytul = ?', array($data['Tytul']));
+		if ( $user && ($data['Tytul'] == $user->tytul) && ($data['Platforma'] == $user->id_platforma) )
 		{
-			$user = R::dispense('gra');
+			//$user = R::dispense('gra');
 			$user->dostepnosc = $user->dostepnosc + $data['Count'];
 			$user->cena = $data['Cena'];
+			
+			echo '<script>alert("POST tytul:'.$data['Tytul'].'");</script>';
+			echo '<script>alert("product tytul:'.$user->tytul.'");</script>';
+			
 			R::store($user);
-			echo '<div style = "color: blue;">Modify Is Done!!!
-			<br/><a href = "../template-login/signIn.php">Sign in</a></div><hr>';
+			
+			header('Location:admin.php?add_success=true');
 		}
-		
 		else
 		{
+			echo '<script>alert("'.$data["Tytul"].'");</script>';
+			
 			$user = R::dispense('gra');
 			$user->tytul = $data['Tytul'];
-			$user->image = "product-images/" . $data['Image'];
-			
-			$user->img = $data['Image'];
 			
 			$user->id_producent = $data['Producent'];
 			$user->id_platforma = $data['Platforma'];
 			$user->id_gatunek = $data['Gatunek'];
 			$user->dostepnosc = $data['Count'];
 			$user->cena = $data['Cena'];
+			
+			$path = $_FILES['Image']['tmp_name'];
+			echo '<div style = "color: blue;">'.$path.'</div>';
+			$type = pathinfo($path, PATHINFO_EXTENSION);
+			$data = file_get_contents($path);
+			$base64 = 'data:image/' . $type . ';base64,' . base64_encode($data);
+			
+			$user->img = $base64;
+			
 			R::store($user);
-			echo '<div style = "color: green;">Adding Is Done!!!
-			<br/><a href = "../template-login/signIn.php">Sign in</a></div><hr>';
+			
+			header('Location:admin.php?modify_success=true');
 		}
 	}
 	else
@@ -53,6 +66,17 @@ if ( isset($data['do_add']) )
 		echo '<div style = "color: red;">' .array_shift($errors). '</div><hr>';
 	}  
 	echo "<meta http-equiv='refresh' content='2; url=admin.php' />"; 
+}
+
+if (isset($_GET['add_success']) && $_GET['add_success']=='true'){
+	echo '<div style = "color: green; text-align: center; font-weight: 666;">Adding Is Done!!!</div>';
+	unset($_GET['add_success']);
+	echo "<meta http-equiv='refresh' content='2; url=admin.php' />";
+}
+if (isset($_GET['modify_success']) && $_GET['modify_success']=='true'){
+	echo '<div style = "color: blue; text-align: center; font-weight: 666;">Modify Is Done!!!</div>';
+	unset($_GET['modify_success']);
+	echo "<meta http-equiv='refresh' content='2; url=admin.php' />";
 }
 ?>
 
@@ -105,7 +129,7 @@ if ( isset($data['do_add']) )
                     <h2 class="title">Dodanie towaru</h2>
                 </div>
                 <div class="card-body">
-                    <form action="../template-admin/admin.php" method="POST">
+                    <form action="../template-admin/admin.php" method="POST" enctype="multipart/form-data" action="__URL__">
                         <div class="form-row">
                             <div class="name">Tytul</div>
                             <div class="value">
