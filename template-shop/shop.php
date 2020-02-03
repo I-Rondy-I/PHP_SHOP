@@ -70,16 +70,12 @@ if(empty($_SESSION["shopping_cart"])) {
 			<div class="carousel-view clearfix">
 				<?php
 				}
-				$base64 = $row['img'];
-				
 				$result = mysqli_query($con,"SELECT * FROM `gra`");
 				while($row = mysqli_fetch_assoc($result)){
 						echo "<div class='box'>
-								  <form method='post' action=''>
+								  <form method='post'>
 									  <input type='hidden' name='id' value=".$row['id']." />
-									  
 									  <img src='".$row['img']."' style='width:100%' />
-									  
 									  <p>".$row['tytul']."</p>
 									  <p class='price'>$".$row['cena']."</p>
 									  <button type='submit' class='buy'>Buy Now</button>

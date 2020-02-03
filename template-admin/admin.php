@@ -1,4 +1,9 @@
 <?php
+//
+//
+//Modify/Adding - nie prawilno otobrazautsa
+//
+//
   require "../db.php";
 
 $data = $_POST;
@@ -16,6 +21,10 @@ if ( isset($data['do_add']) )
 	if ( trim($data['Tytul']) == "" )
 	{
 		$errors[] = 'Input Tytul';
+	}
+	if ( trim($data['Image']) == "" )
+	{
+		$errors[] = 'Not Picture';
 	}
 
 	if ( empty($errors) )

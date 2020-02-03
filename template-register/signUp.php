@@ -42,12 +42,11 @@ if ( isset($data['do_signUp']) )
 		$user->email = $data['E-mail'];
 		$user->password = password_hash($data['Password'], PASSWORD_DEFAULT);
 		R::store($user);
-		echo '<div style = "color: green;">Registration Is Done!!!
-		<br/><a href = "../template-login/signIn.php">Sign in</a></div><hr>';
+		echo '<div style = "color: green; text-align: center; font-weight: 666;">Registration Is Done!!!</div>';
 	}
 	else
 	{
-		echo '<div style = "color: red;">' .array_shift($errors). '</div><hr>';
+		echo '<div style = "color: red; text-align: center; font-weight: 500;">' .array_shift($errors). '</div><hr>';
 	}
 }
 

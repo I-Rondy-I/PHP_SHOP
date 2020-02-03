@@ -10,6 +10,16 @@ if ( isset($data['do_signIn']) )
 	}
 	
 	$errors = array();
+	
+	if ( trim($data['login']) == '' )
+	{
+		$errors[] = 'Input Login';
+	}
+	if ( $data['Password'] == '' )
+	{
+		$errors[] = 'Input Password';
+	}
+	
 	$user = R::findOne('users', 'login = ?', array($data['login']));
 	if ( $user )
 	{
@@ -18,8 +28,7 @@ if ( isset($data['do_signIn']) )
 		{
 			//Login is On - loged in progress..
 			$_SESSION['logged_user'] = $user;
-			echo '<div style = "color: green;">Autorization Is Done!!!<br/>
-			<a href = "../">Main</a> page;)</div><hr>';
+			echo '<div style = "color: green; text-align: center; font-weight: 666;">Autorization Is Done!!!</div>';
 		}
 		else
 		{
@@ -34,7 +43,7 @@ if ( isset($data['do_signIn']) )
 	if ( ! empty($errors) )
 	{
 		//all bad - errors
-		echo '<div style = "color: red;">' .array_shift($errors). '</div><hr>';
+		echo '<div style = "color: red; text-align: center; font-weight: 500;">' .array_shift($errors). '</div><hr>';
 	}
 }
 ?>
