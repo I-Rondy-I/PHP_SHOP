@@ -104,45 +104,8 @@ if(empty($_SESSION["shopping_cart"])) {
 								}
 							?>
 						</ul>
-						<ul>
-							<?php
-								$query = 'SELECT * FROM gra WHERE id_platforma LIKE "1"';
-								$result = mysqli_query($con, $query);
-								while($row = mysqli_fetch_assoc($result)){
-									echo "<li>
-												<form method='post'>
-													<input type='hidden' name='id' value=".$row['id']." />
-												    <p><img src='".$row['img']."' style='max-width:none; width:98%; max-height:none; height:48%; object-fit:cover''/></p>
-												    <p>".$row['tytul']."</p>
-												    <p class='price'>$".$row['cena']."</p>
-							    				    <button type='submit' class='buy'>Buy Now</button>
-											    </form>
-										    </li>";
-								}
-							?>
-						</ul>
-						<ul>
-							<?php
-								$query = 'SELECT * FROM gra WHERE id_platforma LIKE "3"';
-								$result = mysqli_query($con, $query);
-								while($row = mysqli_fetch_assoc($result)){
-									echo "<li>
-											<form method='post'>
-												<input type='hidden' name='id' value=".$row['id']." />
-												<p><img src='".$row['img']."' style='max-width:none; width:98%; max-height:none; height:48%; object-fit:cover''/></p>
-												<p>".$row['tytul']."</p>
-												<p class='price'>$".$row['cena']."</p>
-												<button type='submit' class='buy'>Buy Now</button>
-											</form>
-										  </li>";
-								}
-								mysqli_close($con);
-							?>
-						</ul>
 						<nav>
 							<a href="#">PC</a>
-							<a href="#">PS4</a>
-							<a href="#">XOne</a>
 						</nav>
 					</div>
 				</div>

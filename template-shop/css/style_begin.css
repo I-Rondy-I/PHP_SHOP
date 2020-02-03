@@ -1,4 +1,4 @@
-ul {
+body {
 	margin:0px;
 	font-family:Arial, Helvetica, sans-serif;
 	}
@@ -13,32 +13,32 @@ ul {
 	width:800px;
 	margin:5px auto;
 	}
-ul h1 {
+.carousel h1 {
 	font-size:36px;
 	margin: 0px 0px 30px 0px;
 	font-weight: normal;
 	}
-ul {
+.carousel .box {
 	float:left;
 	width: 33%;
 	}
-ul p{
+.carousel .box p{
 	font-size:20px;
 	color:#0067ab;
 	text-align:center;
 	margin:0px;
 	}
-ul p span{
+.carousel .box p span{
 	font-size: 14px;
 	color: #000;
 	font-weight: bold;
 	}
-ul p img{
+.carousel .box p img{
 	margin-bottom: 10px;
 	margin: auto;
 	}
 
-ul button {
+.carousel .box button {
   border: none;
   outline: 0;
   padding: 12px;
@@ -49,7 +49,7 @@ ul button {
   width: 100%;
   font-size: 18px;
 }
-ul button:hover {
+.carousel .box button:hover {
   opacity: 0.7;
 }
 

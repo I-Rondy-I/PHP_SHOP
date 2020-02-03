@@ -46,8 +46,8 @@
                <div class="row">
                    <div class="col-xs-4">
                        <div  class="thumbnail">
-                           <a href="template-shop/shop.php">
-                                <img src="img/pc.jpg" alt="Camera">
+                           <a href="template-shop/shop_pc.php">
+                                <img src="img/pc.jpg">
                            </a>
                            <center>
                                 <div class="caption">
@@ -59,8 +59,8 @@
                    </div>
                    <div class="col-xs-4">
                        <div class="thumbnail">
-                           <a href="template-shop/shop.php">
-                               <img src="img/ps4.jpg" alt="Watch">
+                           <a href="template-shop/shop_ps4.php">
+                               <img src="img/ps4.jpg">
                            </a>
                            <center>
                                 <div class="caption">
@@ -72,8 +72,8 @@
                    </div>
                    <div class="col-xs-4">
                        <div class="thumbnail">
-                           <a href="template-shop/shop.php">
-                               <img src="img/xone.jpg" alt="Shirt">
+                           <a href="template-shop/shop_xone.php">
+                               <img src="img/xone.jpg">
                            </a>
                            <center>
                                <div class="caption">

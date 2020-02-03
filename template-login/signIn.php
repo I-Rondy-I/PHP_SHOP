@@ -28,6 +28,7 @@ if ( isset($data['do_signIn']) )
 		{
 			//Login is On - loged in progress..
 			$_SESSION['logged_user'] = $user;
+			unset($_SESSION['shopping_cart']);
 			echo '<div style = "color: green; text-align: center; font-weight: 666;">Autorization Is Done!!!</div>';
 		}
 		else

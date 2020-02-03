@@ -16,13 +16,13 @@ if ( isset($data['do_add']) )
 {
 	//Adding products in here
     $errors = array();
-	
+	$user = R::findOne('gra', 'tytul = ?', array($data['Tytul']));
     
 	if ( trim($data['Tytul']) == "" )
 	{
 		$errors[] = 'Input Tytul';
 	}
-	if ( trim($data['Image']) == "" )
+	if ( ($_FILES["Image"]["error"] != 0) && !$user )
 	{
 		$errors[] = 'Not Picture';
 	}
@@ -30,10 +30,8 @@ if ( isset($data['do_add']) )
 	if ( empty($errors) )
 	{
 		//all good - adding in progress..
-		$user = R::findOne('gra', 'tytul = ?', array($data['Tytul']));
 		if ( $user && ($data['Tytul'] == $user->tytul) && ($data['Platforma'] == $user->id_platforma) )
 		{
-			//$user = R::dispense('gra');
 			$user->dostepnosc = $user->dostepnosc + $data['Count'];
 			$user->cena = $data['Cena'];
 			
@@ -58,7 +56,6 @@ if ( isset($data['do_add']) )
 			$user->cena = $data['Cena'];
 			
 			$path = $_FILES['Image']['tmp_name'];
-			echo '<div style = "color: blue;">'.$path.'</div>';
 			$type = pathinfo($path, PATHINFO_EXTENSION);
 			$data = file_get_contents($path);
 			$base64 = 'data:image/' . $type . ';base64,' . base64_encode($data);
@@ -72,18 +69,18 @@ if ( isset($data['do_add']) )
 	}
 	else
 	{
-		echo '<div style = "color: red;">' .array_shift($errors). '</div><hr>';
+		echo '<div style = "color: red; text-align: center; font-weight: 444;">' .array_shift($errors). '</div><hr>';
 	}  
 	echo "<meta http-equiv='refresh' content='2; url=admin.php' />"; 
 }
 
 if (isset($_GET['add_success']) && $_GET['add_success']=='true'){
-	echo '<div style = "color: green; text-align: center; font-weight: 666;">Adding Is Done!!!</div>';
+	echo '<div style = "color: blue; text-align: center; font-weight: 666;">Modify Is Done!!!</div>';
 	unset($_GET['add_success']);
 	echo "<meta http-equiv='refresh' content='2; url=admin.php' />";
 }
 if (isset($_GET['modify_success']) && $_GET['modify_success']=='true'){
-	echo '<div style = "color: blue; text-align: center; font-weight: 666;">Modify Is Done!!!</div>';
+	echo '<div style = "color: green; text-align: center; font-weight: 666;">Adding Is Done!!!</div>';
 	unset($_GET['modify_success']);
 	echo "<meta http-equiv='refresh' content='2; url=admin.php' />";
 }
