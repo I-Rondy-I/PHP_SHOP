@@ -151,7 +151,58 @@ if (isset($_POST['action']) && $_POST['action']=="change"){
 												<option <?php if($product["quantity"]==6) echo "selected";?> value="6">6</option>
 												<?php
 											}
+											else if ($i == 7)
+											{?>
+												<option <?php if($product["quantity"]==1) echo "selected";?> value="1">1</option>
+												<option <?php if($product["quantity"]==2) echo "selected";?> value="2">2</option>
+												<option <?php if($product["quantity"]==3) echo "selected";?> value="3">3</option>
+												<option <?php if($product["quantity"]==4) echo "selected";?> value="4">4</option>
+												<option <?php if($product["quantity"]==5) echo "selected";?> value="5">5</option>
+												<option <?php if($product["quantity"]==6) echo "selected";?> value="6">6</option>
+												<option <?php if($product["quantity"]==7) echo "selected";?> value="7">7</option>
+												<?php
+											}
+											else if ($i == 8)
+											{?>
+												<option <?php if($product["quantity"]==1) echo "selected";?> value="1">1</option>
+												<option <?php if($product["quantity"]==2) echo "selected";?> value="2">2</option>
+												<option <?php if($product["quantity"]==3) echo "selected";?> value="3">3</option>
+												<option <?php if($product["quantity"]==4) echo "selected";?> value="4">4</option>
+												<option <?php if($product["quantity"]==5) echo "selected";?> value="5">5</option>
+												<option <?php if($product["quantity"]==6) echo "selected";?> value="6">6</option>
+												<option <?php if($product["quantity"]==7) echo "selected";?> value="7">7</option>
+												<option <?php if($product["quantity"]==8) echo "selected";?> value="8">8</option>
+												<?php
+											}
+											else if ($i == 9)
+											{?>
+												<option <?php if($product["quantity"]==1) echo "selected";?> value="1">1</option>
+												<option <?php if($product["quantity"]==2) echo "selected";?> value="2">2</option>
+												<option <?php if($product["quantity"]==3) echo "selected";?> value="3">3</option>
+												<option <?php if($product["quantity"]==4) echo "selected";?> value="4">4</option>
+												<option <?php if($product["quantity"]==5) echo "selected";?> value="5">5</option>
+												<option <?php if($product["quantity"]==6) echo "selected";?> value="6">6</option>
+												<option <?php if($product["quantity"]==7) echo "selected";?> value="7">7</option>
+												<option <?php if($product["quantity"]==8) echo "selected";?> value="8">8</option>
+												<option <?php if($product["quantity"]==9) echo "selected";?> value="9">9</option>
+												<?php
+											}
+											else
+											{?>
+												<option <?php if($product["quantity"]==1) echo "selected";?> value="1">1</option>
+												<option <?php if($product["quantity"]==2) echo "selected";?> value="2">2</option>
+												<option <?php if($product["quantity"]==3) echo "selected";?> value="3">3</option>
+												<option <?php if($product["quantity"]==4) echo "selected";?> value="4">4</option>
+												<option <?php if($product["quantity"]==5) echo "selected";?> value="5">5</option>
+												<option <?php if($product["quantity"]==6) echo "selected";?> value="6">6</option>
+												<option <?php if($product["quantity"]==7) echo "selected";?> value="7">7</option>
+												<option <?php if($product["quantity"]==8) echo "selected";?> value="8">8</option>
+												<option <?php if($product["quantity"]==9) echo "selected";?> value="9">9</option>
+												<option <?php if($product["quantity"]==10) echo "selected";?> value="10">10</option>
+												<?php
+											}
 											?>
+											
 										</select>
 										<?php
 												if ( isset($data['buy']) )
@@ -180,7 +231,7 @@ if (isset($_POST['action']) && $_POST['action']=="change"){
 								<td style="vertical-align: middle;"><?php echo $product["cena"]*$product["quantity"]." PLN"; ?></td>
 							</tr>
 						</div>
-						<meta http-equiv="refresh" content="3; cart.php">
+						<meta http-equiv="refresh" content="5; cart.php">
 						<?php
 							//unset($_SESSION["shopping_cart"]);}
 							//header('Location:cart.php');
