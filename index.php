@@ -2,15 +2,6 @@
   require "db.php";
 ?>
 
-<?php if ( isset($_SESSION['logged_user']) ) : ?>
-	Autorizated:)
-	<br>
-	Hello, <?php echo $_SESSION['logged_user'] -> login; ?>!
-<?php else : ?>
-	Not Autorizated:(
-<?php endif; ?>
-
-
 <!DOCTYPE html>
 <html>
     <head>

@@ -38,7 +38,7 @@ if(empty($_SESSION["shopping_cart"])) {
 ?>
 <html>
 	<head>
-	<title>Sklep Gier</title>
+	<title>Sklep Gier - ALL</title>
 
 		<!-- Icons font header-->
 		<link rel="shortcut icon" href="../img/icon.jpg" />
@@ -76,24 +76,17 @@ if(empty($_SESSION["shopping_cart"])) {
 			require '../header-template.php';
 		?>
 		<div style="width:1378px; margin:50;">
-		<?php
-		if(!empty($_SESSION["shopping_cart"])) {
-		$cart_count = count(array_keys($_SESSION["shopping_cart"]));
-		}
-		?>
-		
-		
 		<div class="container1">
 			<div class="row">
 				<div class="col-md-9">
 					<div id="mi-slider" class="mi-slider">
 						<ul>
 							<?php
-								$query = 'SELECT * FROM gra WHERE id_platforma LIKE "2"';
+								$query = 'SELECT * FROM gra WHERE (id_platforma LIKE "2") AND (NOT dostepnosc="0")';
 								$result = mysqli_query($con, $query);
 								while($row = mysqli_fetch_assoc($result)){
 										echo "<li>
-												  <form method='post'>
+												  <form method='post' action=''>
 													  <input type='hidden' name='id' value=".$row['id']." />
 													  <p><img src='".$row['img']."' style='max-width:none; width:98%; max-height:none; height:48%; object-fit:cover''/></p>
 													  <p>".$row['tytul']."</p>
@@ -106,11 +99,11 @@ if(empty($_SESSION["shopping_cart"])) {
 						</ul>
 						<ul>
 							<?php
-								$query = 'SELECT * FROM gra WHERE id_platforma LIKE "1"';
+								$query = 'SELECT * FROM gra WHERE (id_platforma LIKE "1") AND (NOT dostepnosc="0")';
 								$result = mysqli_query($con, $query);
 								while($row = mysqli_fetch_assoc($result)){
 									echo "<li>
-												<form method='post'>
+												<form method='post' action=''>
 													<input type='hidden' name='id' value=".$row['id']." />
 												    <p><img src='".$row['img']."' style='max-width:none; width:98%; max-height:none; height:48%; object-fit:cover''/></p>
 												    <p>".$row['tytul']."</p>
@@ -123,11 +116,11 @@ if(empty($_SESSION["shopping_cart"])) {
 						</ul>
 						<ul>
 							<?php
-								$query = 'SELECT * FROM gra WHERE id_platforma LIKE "3"';
+								$query = 'SELECT * FROM gra WHERE (id_platforma LIKE "3") AND (NOT dostepnosc="0")';
 								$result = mysqli_query($con, $query);
 								while($row = mysqli_fetch_assoc($result)){
 									echo "<li>
-											<form method='post'>
+											<form method='post' action=''>
 												<input type='hidden' name='id' value=".$row['id']." />
 												<p><img src='".$row['img']."' style='max-width:none; width:98%; max-height:none; height:48%; object-fit:cover''/></p>
 												<p>".$row['tytul']."</p>

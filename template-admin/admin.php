@@ -1,10 +1,5 @@
 <?php
-//
-//
-//Modify/Adding - nie prawilno otobrazautsa
-//
-//
-  require "../db.php";
+require "../db.php";
 
 $data = $_POST;
 $Producers = R::findAll( 'Producent' );
@@ -35,8 +30,8 @@ if ( isset($data['do_add']) )
 			$user->dostepnosc = $user->dostepnosc + $data['Count'];
 			$user->cena = $data['Cena'];
 			
-			echo '<script>alert("POST tytul:'.$data['Tytul'].'");</script>';
-			echo '<script>alert("product tytul:'.$user->tytul.'");</script>';
+			//echo '<script>alert("POST tytul:'.$data['Tytul'].'");</script>';
+			//echo '<script>alert("product tytul:'.$user->tytul.'");</script>';
 			
 			R::store($user);
 			
@@ -44,7 +39,7 @@ if ( isset($data['do_add']) )
 		}
 		else
 		{
-			echo '<script>alert("'.$data["Tytul"].'");</script>';
+			//echo '<script>alert("'.$data["Tytul"].'");</script>';
 			
 			$user = R::dispense('gra');
 			$user->tytul = $data['Tytul'];
@@ -109,7 +104,7 @@ if (isset($_GET['modify_success']) && $_GET['modify_success']=='true'){
         <link rel="stylesheet" href="../css/style.css" type="text/css">
 	
     <!-- Title Page-->
-    <title>Dodanie towaru</title>
+    <title>Sklep Gier - Dodanie towaru</title>
     <!-- Icons font CSS-->
     <link href="vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
     <link href="vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">

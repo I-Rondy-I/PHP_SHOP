@@ -2,6 +2,8 @@
   require "../db.php";
 
 $data = $_POST;
+
+echo '<script>console.log('.json_encode($data,JSON_HEX_TAG).');</script>';
 if ( isset($data['do_signUp']) )
 {
 	//Registration in here
@@ -42,14 +44,21 @@ if ( isset($data['do_signUp']) )
 		$user->email = $data['E-mail'];
 		$user->password = password_hash($data['Password'], PASSWORD_DEFAULT);
 		R::store($user);
-		echo '<div style = "color: green; text-align: center; font-weight: 666;">Registration Is Done!!!</div>';
+		
+		header('Location:signUp.php?success=true');
 	}
 	else
 	{
-		echo '<div style = "color: red; text-align: center; font-weight: 500;">' .array_shift($errors). '</div><hr>';
+		echo '<div style = "color: red; text-align: center; font-weight: 500;">' .array_shift($errors). '</div>';
 	}
+	echo "<meta http-equiv='refresh' content='2; url=signUp.php' />"; 
 }
 
+if (isset($_GET['success']) && $_GET['success']=='true'){
+	echo '<div style = "color: green; text-align: center; font-weight: 666;">Registration Is Done!!!</div>';
+	unset($_GET['success']);
+	echo "<meta http-equiv='refresh' content='2; url=signUp.php' />";
+}
 ?>
 
 <!DOCTYPE html>
@@ -65,7 +74,7 @@ if ( isset($data['do_signUp']) )
     <meta name="keywords" content="Colorlib Templates">
 
     <!-- Title Page-->
-    <title>Rejestracja</title>
+    <title>Sklep Gier - Rejestracja</title>
 	
 		<!-- Icons font header-->
 		<link rel="shortcut icon" href="../img/icon.jpg" />

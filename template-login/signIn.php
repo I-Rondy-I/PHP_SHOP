@@ -2,6 +2,8 @@
   require "../db.php";
 
 $data = $_POST;
+
+echo '<script>console.log('.json_encode($data,JSON_HEX_TAG).');</script>';
 if ( isset($data['do_signIn']) )
 {
 	if ( ($data['Password'] == 'admin') && ($data['login'] == 'admin') )
@@ -30,6 +32,7 @@ if ( isset($data['do_signIn']) )
 			$_SESSION['logged_user'] = $user;
 			unset($_SESSION['shopping_cart']);
 			echo '<div style = "color: green; text-align: center; font-weight: 666;">Autorization Is Done!!!</div>';
+			header('Location: ../');
 		}
 		else
 		{
@@ -44,7 +47,7 @@ if ( isset($data['do_signIn']) )
 	if ( ! empty($errors) )
 	{
 		//all bad - errors
-		echo '<div style = "color: red; text-align: center; font-weight: 500;">' .array_shift($errors). '</div><hr>';
+		echo '<div style = "color: red; text-align: center; font-weight: 500;">' .array_shift($errors). '</div>';
 	}
 }
 ?>
@@ -52,7 +55,7 @@ if ( isset($data['do_signIn']) )
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Logowanie</title>
+	<title>Sklep Gier - Logowanie</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	
@@ -67,8 +70,6 @@ if ( isset($data['do_signIn']) )
         <!-- External CSS -->
         <link rel="stylesheet" href="../css/style.css" type="text/css">
 	
-<!--===============================================================================================-->	
-	<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
 <!--===============================================================================================-->

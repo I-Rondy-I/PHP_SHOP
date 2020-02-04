@@ -10,7 +10,7 @@
 <html>
     <head>
         <link rel="shortcut icon" href="img/icon.jpg" />
-        <title>Sklep Gier</title>
+        <title>Sklep Gier - Re-Password</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <!-- latest compiled and minified CSS -->

@@ -31,7 +31,6 @@ if (isset($_POST['action']) && $_POST['action']=="change"){
 			  'root', '' ); //for both mysql or mariaDB
 	
 	$data = $_POST;
-	$k = 0;
  
 ?>
 
@@ -164,13 +163,11 @@ if (isset($_POST['action']) && $_POST['action']=="change"){
 															$user->dostepnosc = $user->dostepnosc - $product['quantity'];
 															R::store($user);
 															unset($_SESSION["shopping_cart"][$product['id']]);
-															$k += 1;
 															
-															//header("Refresh:0");
-															
+															//header('Location:cart.php');
 														}
-													}
-													if( $k >= 1) {unset($_SESSION["shopping_cart"]);}
+													//}
+													if(empty($_SESSION["shopping_cart"])) {unset($_SESSION["shopping_cart"]);}
 												
 												?>
 									</form>
@@ -180,12 +177,9 @@ if (isset($_POST['action']) && $_POST['action']=="change"){
 								<td style="vertical-align: middle;"><?php echo $product["cena"]*$product["quantity"]." PLN"; ?></td>
 							</tr>
 						</div>
-						<meta http-equiv="refresh" content="3; cart.php">
+						
 						<?php
-							//unset($_SESSION["shopping_cart"]);}
-							//header('Location:cart.php');
-							
-							$k = 0;
+							unset($_SESSION["shopping_cart"]);}
 						?>
 						
 						<?php

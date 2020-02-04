@@ -38,7 +38,7 @@ if(empty($_SESSION["shopping_cart"])) {
 ?>
 <html>
 	<head>
-	<title>Sklep Gier</title>
+	<title>Sklep Gier - PC</title>
 
 		<!-- Icons font header-->
 		<link rel="shortcut icon" href="../img/icon.jpg" />
@@ -89,7 +89,7 @@ if(empty($_SESSION["shopping_cart"])) {
 					<div id="mi-slider" class="mi-slider">
 						<ul>
 							<?php
-								$query = 'SELECT * FROM gra WHERE id_platforma LIKE "2"';
+								$query = 'SELECT * FROM gra WHERE (id_platforma LIKE "2") AND (NOT dostepnosc="0")';
 								$result = mysqli_query($con, $query);
 								while($row = mysqli_fetch_assoc($result)){
 										echo "<li>
